@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: makeline-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: makeline-service
+  template:
+    metadata:
+      labels:
+        app: makeline-service
+      annotations:
+        traffic.sidecar.istio.io/includeInboundPorts: "3001" # Istio sidecar routing
+    spec:
+      containers:
+        - name: makeline-service
+          image: ghcr.io/azure-samples/aks-store-demo/makeline-service:latest
+          ports:
+            - containerPort: 3001
+          env:
+            # MongoDB Configuration (use in-cluster MongoDB pod)
+            - name: ORDER_DB_NAME
+              value: azure_demo_db
+            - name: ORDER_DB_COLLECTION_NAME
+              value: orders
+            - name: ORDER_DB_URI
+              value: mongodb://mongodb:27017/azure_demo_db
+
+            # RabbitMQ Configuration (use in-cluster RabbitMQ with guest credentials)
+            - name: ORDER_QUEUE_NAME
+              value: orders
+            - name: ORDER_QUEUE_URI
+              value: amqp://guest:guest@rabbitmq:5672/
+            - name: ORDER_QUEUE_USERNAME
+              value: guest
+            - name: ORDER_QUEUE_PASSWORD
+              value: guest
+
+          resources:
+            requests:
+              cpu: 10m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
