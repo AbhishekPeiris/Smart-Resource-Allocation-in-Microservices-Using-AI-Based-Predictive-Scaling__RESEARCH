@@ -1,4 +1,5 @@
--------------NODE_EXPOTER-------------
+-------------NODE_LEVEL-------------
+
 // node_cpu_seconds_total
 curl.exe "http://localhost:9090/api/v1/query?query=node_cpu_seconds_total" -o node_cpu.json
 type node_cpu.json
@@ -42,3 +43,10 @@ type load5.json
 
 curl.exe "http://localhost:9090/api/v1/query?query=node_load15" --output load15.json\
 type load15.json
+
+
+-------------POD_LEVEL-------------
+
+// container_cpu_usage_seconds_total
+curl.exe "http://localhost:9090/api/v1/query?query=container_cpu_usage_seconds_total" -o cadvisor_cpu.json
+type cadvisor_cpu.json
