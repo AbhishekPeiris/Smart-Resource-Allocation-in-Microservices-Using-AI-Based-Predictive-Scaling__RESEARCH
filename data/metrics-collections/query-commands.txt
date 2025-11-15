@@ -22,3 +22,6 @@ type memory_usage.json
 // disk_I/O_throughput_(read/write MB/s)
 curl.exe "http://localhost:9090/api/v1/query?query=irate(node_disk_read_bytes_total%5B1m%5D)%20%2F%201024%20%2F%201024" --output disk_read.json
 type disk_read.json
+
+curl.exe "http://localhost:9090/api/v1/query?query=irate(node_disk_written_bytes_total%5B1m%5D)%20%2F%201024%20%2F%201024" --output disk_write.json
+type disk_write.json

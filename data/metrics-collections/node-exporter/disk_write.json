@@ -1,0 +1,73 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sda",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195436.466, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sdb",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195436.466, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sdc",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195436.466, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sdd",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195436.466, "0.14916312322828082"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sde",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195436.466, "0.016544730698682675"]
+      }
+    ]
+  }
+}
