@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": { "destination_service": "store-front.default.svc.cluster.local" },
+        "value": [1763203717.057, "0"]
+      },
+      {
+        "metric": { "destination_service": "product-service.default.svc.cluster.local" },
+        "value": [1763203717.057, "0"]
+      }
+    ]
+  }
+}

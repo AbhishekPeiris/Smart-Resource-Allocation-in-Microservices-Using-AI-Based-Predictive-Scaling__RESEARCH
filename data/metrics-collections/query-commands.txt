@@ -84,3 +84,12 @@ type pod_net_out.json
 // service-to-service_latency_(request_latency)
 curl.exe "http://localhost:9090/api/v1/query?query=histogram_quantile(0.95,sum%20by%20(destination_service%2C%20source_service%2C%20le)(rate(istio_request_duration_milliseconds_bucket%5B1m%5D)))" --output svc_latency_p95.json
 type svc_latency_p95.json
+
+// error_rate_per_service
+curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(destination_service)(rate(istio_requests_total%7Bresponse_code%3D~%224.*%7C5.*%22%7D%5B1m%5D))%20/%20sum%20by%20(destination_service)(rate(istio_requests_total%5B1m%5D))%20*%20100" --output svc_error_rate.json
+type svc_error_rate.json
+
+// traffic_volume_between_services
+# Requests/sec
+curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(source_service%2C%20destination_service)(rate(istio_requests_total%5B1m%5D))" --output svc_rps.json
+type svc_rps.json
