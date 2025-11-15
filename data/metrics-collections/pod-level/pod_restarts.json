@@ -1,0 +1,136 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": { "namespace": "default", "pod": "makeline-service-6c8ffb5857-p4mdw" },
+        "value": [1763202887.476, "298"]
+      },
+      {
+        "metric": { "namespace": "istio-system", "pod": "istio-ingressgateway-7c5fd9bc88-q7kbw" },
+        "value": [1763202887.476, "6"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "kube-scheduler-docker-desktop" },
+        "value": [1763202887.476, "18"]
+      },
+      {
+        "metric": { "namespace": "istio-system", "pod": "istiod-597958d8ff-n8m58" },
+        "value": [1763202887.476, "6"]
+      },
+      {
+        "metric": {
+          "namespace": "monitoring",
+          "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        "value": [1763202887.476, "18"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "order-service-595b65df56-hz8hf" },
+        "value": [1763202887.476, "13"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "kube-apiserver-docker-desktop" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "mongodb-0" },
+        "value": [1763202887.476, "456"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "coredns-668d6bf9bc-hxh7k" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "virtual-worker-7766b5bbf8-27nrt" },
+        "value": [1763202887.476, "196"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "makeline-service-65bb465b7c-ckq47" },
+        "value": [1763202887.476, "179"]
+      },
+      {
+        "metric": {
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-kube-prometheus-prometheus-0"
+        },
+        "value": [1763202887.476, "17"]
+      },
+      {
+        "metric": { "namespace": "monitoring", "pod": "prometheus-prometheus-node-exporter-f84r5" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": {
+          "namespace": "monitoring",
+          "pod": "prometheus-kube-state-metrics-7c5fb9d798-q25kq"
+        },
+        "value": [1763202887.476, "17"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "etcd-docker-desktop" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "kube-proxy-xvhz6" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "coredns-668d6bf9bc-crl86" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "monitoring", "pod": "prometheus-grafana-674cf8cb44-6jxww" },
+        "value": [1763202887.476, "25"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "rabbitmq-0" },
+        "value": [1763202887.476, "12"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "vpnkit-controller" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "monitoring", "pod": "cadvisor-h2n6c" },
+        "value": [1763202887.476, "1"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "storage-provisioner" },
+        "value": [1763202887.476, "26"]
+      },
+      {
+        "metric": { "namespace": "istio-system", "pod": "istio-egressgateway-74bbd4975d-wc5cx" },
+        "value": [1763202887.476, "6"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "store-front-6ff78d4f79-m9bsc" },
+        "value": [1763202887.476, "11"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "store-admin-5588c957-b9bkd" },
+        "value": [1763202887.476, "17"]
+      },
+      {
+        "metric": {
+          "namespace": "monitoring",
+          "pod": "prometheus-kube-prometheus-operator-57d68989cc-27bhh"
+        },
+        "value": [1763202887.476, "18"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "product-service-5b8794b597-nn29v" },
+        "value": [1763202887.476, "9"]
+      },
+      {
+        "metric": { "namespace": "default", "pod": "virtual-customer-f5d4cd9f7-dbdk5" },
+        "value": [1763202887.476, "10"]
+      },
+      {
+        "metric": { "namespace": "kube-system", "pod": "kube-controller-manager-docker-desktop" },
+        "value": [1763202887.476, "9"]
+      }
+    ]
+  }
+}

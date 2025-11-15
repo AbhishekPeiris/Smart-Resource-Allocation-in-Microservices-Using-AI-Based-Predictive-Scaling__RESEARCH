@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": { "namespace": "monitoring", "pod": "cadvisor-h2n6c" },
+        "value": [1763202676.029, "112.26428149988405"]
+      }
+    ]
+  }
+}

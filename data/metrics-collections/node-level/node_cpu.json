@@ -1,0 +1,1448 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14533.24"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "84.15"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1358.29"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "596.43"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1238.75"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14681.29"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "101.97"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "2.45"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "669.18"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "535.03"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1254.28"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14497.91"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "76.51"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0.8"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "23.58"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "630.05"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "10",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1340.4"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14842.41"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "59.07"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1.4"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "29.42"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "510.18"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "11",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1181.98"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14498.37"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "86.83"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "254.72"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "617.05"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "2",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1304.57"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14803.88"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "64.02"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "187.75"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "521.98"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "3",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1206.81"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14516.09"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "78.63"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "73.37"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "637.99"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "4",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1314.9"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14812.88"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "66.53"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "85.13"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "521.76"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1195.15"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14510.95"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "77.14"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "38.6"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "620.67"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1330.72"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14814.94"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "65.86"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "51.93"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "521.96"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "7",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1196.94"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14520.84"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "75.98"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0.45"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "26.43"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "623.55"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1320.4"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "idle",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "14803.78"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "iowait",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "57.36"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "irq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "nice",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "2.3"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "softirq",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "38.09"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "steal",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "0"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "system",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "522.8"]
+      },
+      {
+        "metric": {
+          "__name__": "node_cpu_seconds_total",
+          "container": "node-exporter",
+          "cpu": "9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "mode": "user",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763192863.189, "1206.78"]
+      }
+    ]
+  }
+}
