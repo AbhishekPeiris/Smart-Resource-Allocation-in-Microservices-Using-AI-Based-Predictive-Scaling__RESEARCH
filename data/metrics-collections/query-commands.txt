@@ -85,6 +85,10 @@ type pod_net_out.json
 curl.exe "http://localhost:9090/api/v1/query?query=sum(rate(istio_requests_total%5B1m%5D))%20by%20(destination_workload)" --output app_rps.json
 type app_rps.json
 
+// response_latency–average_response_time (ms)
+curl.exe "http://localhost:9090/api/v1/query?query=sum(rate(istio_request_duration_seconds_sum%5B1m%5D))%20by%20(destination_workload)%20%2F%20sum(rate(istio_request_duration_seconds_count%5B1m%5D))%20by%20(destination_workload)%20*%201000" --output app_latency_ms.json
+type app_latency_ms.json
+
 
 -------------SERVICE_MESH_LEVEL-------------
 
