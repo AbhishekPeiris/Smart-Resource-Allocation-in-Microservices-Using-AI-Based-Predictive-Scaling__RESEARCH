@@ -128,6 +128,10 @@ type mesh_latency.json
 curl.exe "http://localhost:9090/api/v1/query?query=%28sum%28rate%28istio_requests_total%7Bresponse_code%3D~%225..%22%7D%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%20%2F%20sum%28rate%28istio_requests_total%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%29%20*%20100" --output mesh_error_rate.json
 type mesh_error_rate.json
 
+// traffic_volume_(service-to-service_requests_per_second)
+curl.exe "http://localhost:9090/api/v1/query?query=sum%28rate%28istio_requests_total%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29" --output mesh_traffic.json
+type mesh_traffic.json
+
 *********************************************
 
 # check_prometheus_API_is_alive
