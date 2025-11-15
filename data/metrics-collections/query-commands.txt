@@ -93,6 +93,10 @@ type app_latency_ms.json
 curl.exe "http://localhost:9090/api/v1/query?query=%28sum(rate(istio_requests_total%7Bresponse_code%3D~%225..%22%7D%5B1m%5D))%20by%20(destination_workload)%20%2F%20sum(rate(istio_requests_total%5B1m%5D))%20by%20(destination_workload)%29%20*%20100" --output app_error_rate.json
 type app_error_rate.json
 
+// queue_length–pending_requests_in_processing_queues
+curl.exe "http://localhost:9090/api/v1/query?query=sum(app_queue_length)%20by%20(pod%2C%20namespace)" --output app_queue_length.json
+type app_queue_length.json
+
 
 -------------SERVICE_MESH_LEVEL-------------
 
