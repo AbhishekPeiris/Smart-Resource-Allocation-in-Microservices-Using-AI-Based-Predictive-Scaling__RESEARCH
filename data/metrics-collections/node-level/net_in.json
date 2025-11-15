@@ -1,0 +1,450 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "br-5151342bf6c6",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "8.902444027129522e-07"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "cni0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.004918218791673612"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "docker0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "eth0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.010688369682300565"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "lo",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.07574049944399913"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "services1",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.15710613532431186"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth057643d5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.009877357031429066"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth09867b69",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00023826755549753083"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth0ce2554",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth0ff92763",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.000532970247238472"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth34a4c9c9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.0005688661733335765"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth361c218",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth473cb242",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.000005436849745139815"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth66f83347",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00029317655847914756"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth6a51da61",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.0038797804903519073"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth7037646d",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.0000394569037059562"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth720f0a62",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.014877192158165683"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth7ded320d",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.000037358470470989956"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth818e04b9",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.0002516212215382251"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth8250d25",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth882e229b",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.000037358470470989956"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "veth88695cd5",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00004145995361206034"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethad47b5df",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00008473219047250062"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethc840659f",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00024526233294741833"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethd4524ab8",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00013067516054107977"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethd68e434a",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00023826755549753083"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethda7eb40e",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.0002288881948260908"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethdba89692",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00047672587765278584"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethdd2b3f62",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.001103203581619072"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethf22492be",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.21530188884630186"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethf3d167d",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethf8831d6c",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.00029737342494908"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethfa5bd2a0",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0.0007083483945729236"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "vethfe95d59",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195569.738, "0"]
+      }
+    ]
+  }
+}

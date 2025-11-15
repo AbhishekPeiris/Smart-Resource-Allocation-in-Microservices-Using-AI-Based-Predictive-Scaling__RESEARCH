@@ -1,0 +1,73 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sda",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195282.845, "0"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sdb",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195282.845, "0.050693286071726434"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sdc",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195282.845, "0.00860091743119266"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sdd",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195282.845, "0.4145381567973311"]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "device": "sde",
+          "endpoint": "http-metrics",
+          "instance": "192.168.65.3:9100",
+          "job": "node-exporter",
+          "namespace": "monitoring",
+          "pod": "prometheus-prometheus-node-exporter-f84r5",
+          "service": "prometheus-prometheus-node-exporter"
+        },
+        "value": [1763195282.845, "0.015898665554628856"]
+      }
+    ]
+  }
+}

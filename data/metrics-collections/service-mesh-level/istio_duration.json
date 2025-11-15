@@ -1,0 +1,80 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "istio_request_duration_milliseconds_sum",
+          "connection_security_policy": "none",
+          "container": "istio-proxy",
+          "destination_app": "store-front",
+          "destination_canonical_revision": "latest",
+          "destination_canonical_service": "store-front",
+          "destination_cluster": "Kubernetes",
+          "destination_principal": "unknown",
+          "destination_service": "store-front.default.svc.cluster.local",
+          "destination_service_name": "store-front",
+          "destination_service_namespace": "default",
+          "destination_workload": "store-front",
+          "destination_workload_namespace": "default",
+          "endpoint": "http-envoy-prom",
+          "instance": "10.1.1.24:15090",
+          "job": "front-end",
+          "namespace": "default",
+          "pod": "store-front-6ff78d4f79-m9bsc",
+          "reporter": "destination",
+          "request_protocol": "http",
+          "response_code": "200",
+          "response_flags": "-",
+          "service": "front-end",
+          "source_app": "unknown",
+          "source_canonical_revision": "latest",
+          "source_canonical_service": "unknown",
+          "source_cluster": "unknown",
+          "source_principal": "unknown",
+          "source_version": "unknown",
+          "source_workload": "unknown",
+          "source_workload_namespace": "unknown"
+        },
+        "value": [1763204189.565, "20.5"]
+      },
+      {
+        "metric": {
+          "__name__": "istio_request_duration_milliseconds_sum",
+          "connection_security_policy": "unknown",
+          "container": "istio-proxy",
+          "destination_app": "product-service",
+          "destination_canonical_revision": "latest",
+          "destination_canonical_service": "product-service",
+          "destination_cluster": "Kubernetes",
+          "destination_principal": "spiffe://cluster.local/ns/default/sa/default",
+          "destination_service": "product-service.default.svc.cluster.local",
+          "destination_service_name": "product-service",
+          "destination_service_namespace": "default",
+          "destination_version": "unknown",
+          "destination_workload": "product-service",
+          "destination_workload_namespace": "default",
+          "endpoint": "http-envoy-prom",
+          "instance": "10.1.1.24:15090",
+          "job": "front-end",
+          "namespace": "default",
+          "pod": "store-front-6ff78d4f79-m9bsc",
+          "reporter": "source",
+          "request_protocol": "http",
+          "response_code": "200",
+          "response_flags": "-",
+          "service": "front-end",
+          "source_app": "store-front",
+          "source_canonical_revision": "latest",
+          "source_canonical_service": "store-front",
+          "source_cluster": "Kubernetes",
+          "source_principal": "spiffe://cluster.local/ns/default/sa/default",
+          "source_workload": "store-front",
+          "source_workload_namespace": "default"
+        },
+        "value": [1763204189.565, "13.5"]
+      }
+    ]
+  }
+}

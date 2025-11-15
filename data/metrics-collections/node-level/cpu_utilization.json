@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": { "instance": "192.168.65.3:9100" },
+        "value": [1763194927.304, "13.267459814931698"]
+      }
+    ]
+  }
+}
