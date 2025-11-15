@@ -1,0 +1,12 @@
+-------------NODE_EXPOTER-------------
+// node_cpu_seconds_total
+curl.exe "http://localhost:9090/api/v1/query?query=node_cpu_seconds_total" -o node_cpu.json
+type node_cpu.json
+
+// node_memory_MemAvailable_bytes
+curl.exe "http://localhost:9090/api/v1/query?query=node_memory_MemAvailable_bytes" -o node_mem.json
+type node_mem.json
+
+// node_network_receive_bytes_total
+curl.exe "http://localhost:9090/api/v1/query?query=node_network_receive_bytes_total" -o node_net_rx.json
+type node_net_rx.json
