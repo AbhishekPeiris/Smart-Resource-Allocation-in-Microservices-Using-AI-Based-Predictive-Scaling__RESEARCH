@@ -29,3 +29,6 @@ type disk_write.json
 // network_throughput_(incoming/outgoing_rate MB/s)
 curl.exe "http://localhost:9090/api/v1/query?query=irate(node_network_receive_bytes_total%5B1m%5D)%20%2F%201024%20%2F%201024" --output net_in.json
 type net_in.json
+
+curl.exe "http://localhost:9090/api/v1/query?query=irate(node_network_transmit_bytes_total%5B1m%5D)%20%2F%201024%20%2F%201024" --output net_out.json
+type net_out.json
