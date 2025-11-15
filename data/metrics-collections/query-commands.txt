@@ -71,3 +71,7 @@ type pod_memory.json
 curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(pod%2C%20namespace)%20(kube_pod_container_status_restarts_total)" --output pod_restarts.json
 type pod_restarts.json
 
+// pod_network_I/O_(incoming/outgoing MB/s)
+curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(pod%2C%20namespace)%20(irate(container_network_receive_bytes_total%5B1m%5D))%20%2F%201024%20%2F%201024" --output pod_net_in.json
+type pod_net_in.json
+
