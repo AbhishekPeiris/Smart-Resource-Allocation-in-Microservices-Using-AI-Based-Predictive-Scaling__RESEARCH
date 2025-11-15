@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      { "metric": { "destination_workload": "store-front" }, "value": [1763205579.132, "0"] },
+      { "metric": { "destination_workload": "product-service" }, "value": [1763205579.132, "0"] }
+    ]
+  }
+}
