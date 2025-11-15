@@ -10,3 +10,7 @@ type node_mem.json
 // node_network_receive_bytes_total
 curl.exe "http://localhost:9090/api/v1/query?query=node_network_receive_bytes_total" -o node_net_rx.json
 type node_net_rx.json
+
+// cpu_utilization
+curl.exe "http://localhost:9090/api/v1/query?query=100%20-%20(avg%20by%20(instance)%20(irate(node_cpu_seconds_total%7Bmode%3D%22idle%22%7D%5B1m%5D))%20*%20100)" --output cpu_utilization.json
+type cpu_utilization.json
