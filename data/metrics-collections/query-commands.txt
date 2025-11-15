@@ -124,6 +124,9 @@ type istio_tcp_sent.json
 curl.exe "http://localhost:9090/api/v1/query?query=%28sum%28rate%28istio_request_duration_seconds_sum%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%20%2F%20sum%28rate%28istio_request_duration_seconds_count%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%29%20*%201000" --output mesh_latency.json
 type mesh_latency.json
 
+// service-to-service_error_rate (%)
+curl.exe "http://localhost:9090/api/v1/query?query=%28sum%28rate%28istio_requests_total%7Bresponse_code%3D~%225..%22%7D%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%20%2F%20sum%28rate%28istio_requests_total%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%29%20*%20100" --output mesh_error_rate.json
+type mesh_error_rate.json
 
 *********************************************
 
