@@ -54,3 +54,7 @@ type cadvisor_cpu.json
 // container_memory_usage_bytes
 curl.exe "http://localhost:9090/api/v1/query?query=container_memory_usage_bytes" -o cadvisor_mem.json
 type cadvisor_mem.json
+
+// container_fs_usage_bytes
+curl.exe "http://localhost:9090/api/v1/query?query=container_fs_usage_bytes" -o cadvisor_fs.json
+type cadvisor_fs.json
