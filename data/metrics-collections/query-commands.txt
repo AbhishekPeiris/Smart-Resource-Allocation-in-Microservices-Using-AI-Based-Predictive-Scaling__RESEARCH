@@ -120,6 +120,10 @@ type istio_duration_count.json
 curl.exe "http://localhost:9090/api/v1/query?query=istio_tcp_sent_bytes_total" -o istio_tcp_sent.json
 type istio_tcp_sent.json
 
+// service-to-service_latency (ms)
+curl.exe "http://localhost:9090/api/v1/query?query=%28sum%28rate%28istio_request_duration_seconds_sum%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%20%2F%20sum%28rate%28istio_request_duration_seconds_count%5B1m%5D%29%29%20by%20%28source_workload%2C%20destination_workload%29%29%20*%201000" --output mesh_latency.json
+type mesh_latency.json
+
 
 *********************************************
 
