@@ -97,3 +97,7 @@ type svc_rps.json
 # incoming_traffic (MB/s)
 curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(destination_service)(rate(istio_request_bytes_total%5B1m%5D))%20/%201024%20/%201024" --output svc_in_bytes.json
 type svc_in_bytes.json
+
+# outgoing_traffic (MB/s)
+curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(source_service)(rate(istio_response_bytes_total%5B1m%5D))%20/%201024%20/%201024" --output svc_out_bytes.json
+type svc_out_bytes.json
