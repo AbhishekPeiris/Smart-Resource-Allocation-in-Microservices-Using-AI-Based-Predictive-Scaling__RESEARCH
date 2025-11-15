@@ -89,6 +89,10 @@ type app_rps.json
 curl.exe "http://localhost:9090/api/v1/query?query=sum(rate(istio_request_duration_seconds_sum%5B1m%5D))%20by%20(destination_workload)%20%2F%20sum(rate(istio_request_duration_seconds_count%5B1m%5D))%20by%20(destination_workload)%20*%201000" --output app_latency_ms.json
 type app_latency_ms.json
 
+// error_rate(%)–failed_requests_percentage
+curl.exe "http://localhost:9090/api/v1/query?query=%28sum(rate(istio_requests_total%7Bresponse_code%3D~%225..%22%7D%5B1m%5D))%20by%20(destination_workload)%20%2F%20sum(rate(istio_requests_total%5B1m%5D))%20by%20(destination_workload)%29%20*%20100" --output app_error_rate.json
+type app_error_rate.json
+
 
 -------------SERVICE_MESH_LEVEL-------------
 
