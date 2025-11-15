@@ -109,9 +109,13 @@ type svc_out_bytes.json
 curl.exe "http://localhost:9090/api/v1/query?query=istio_requests_total" -o istio_requests.json
 type istio_requests.json
 
-// istio_requests_total
+// istio_request_duration_milliseconds_su (convert to seconds later)
 curl.exe "http://localhost:9090/api/v1/query?query=istio_request_duration_milliseconds_sum" -o istio_duration.json
 type istio_duration.json
+
+// request_duration_(sum)
+curl.exe "http://localhost:9090/api/v1/query?query=istio_request_duration_milliseconds_sum" -o istio_duration_sum.json
+type istio_duration_sum.json
 
 // stio_tcp_sent_bytes_total
 curl.exe "http://localhost:9090/api/v1/query?query=istio_tcp_sent_bytes_total" -o istio_tcp_sent.json
