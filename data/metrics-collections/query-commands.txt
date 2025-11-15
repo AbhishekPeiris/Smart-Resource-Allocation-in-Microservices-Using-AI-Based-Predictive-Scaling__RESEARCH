@@ -31,4 +31,8 @@ curl.exe "http://localhost:9090/api/v1/query?query=irate(node_network_receive_by
 type net_in.json
 
 curl.exe "http://localhost:9090/api/v1/query?query=irate(node_network_transmit_bytes_total%5B1m%5D)%20%2F%201024%20%2F%201024" --output net_out.json
-type net_out.json
+type 
+
+// cpu_load_average_(1m, 5m, 15m)
+curl.exe "http://localhost:9090/api/v1/query?query=node_load1" --output load1.json
+type load1.json
