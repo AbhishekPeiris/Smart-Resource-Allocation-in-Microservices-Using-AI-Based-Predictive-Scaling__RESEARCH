@@ -112,3 +112,7 @@ type istio_requests.json
 // istio_requests_total
 curl.exe "http://localhost:9090/api/v1/query?query=istio_request_duration_milliseconds_sum" -o istio_duration.json
 type istio_duration.json
+
+// stio_tcp_sent_bytes_total
+curl.exe "http://localhost:9090/api/v1/query?query=istio_tcp_sent_bytes_total" -o istio_tcp_sent.json
+type istio_tcp_sent.json
