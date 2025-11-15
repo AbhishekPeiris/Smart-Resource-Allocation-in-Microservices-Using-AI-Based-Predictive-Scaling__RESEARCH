@@ -14,3 +14,7 @@ type node_net_rx.json
 // cpu_utilization
 curl.exe "http://localhost:9090/api/v1/query?query=100%20-%20(avg%20by%20(instance)%20(irate(node_cpu_seconds_total%7Bmode%3D%22idle%22%7D%5B1m%5D))%20*%20100)" --output cpu_utilization.json
 type cpu_utilization.json
+
+// memory_usage_&_availability
+curl.exe "http://localhost:9090/api/v1/query?query=((node_memory_MemTotal_bytes%20-%20node_memory_MemAvailable_bytes)%20%2F%20node_memory_MemTotal_bytes)%20*%20100" --output memory_usage.json
+type memory_usage.json
