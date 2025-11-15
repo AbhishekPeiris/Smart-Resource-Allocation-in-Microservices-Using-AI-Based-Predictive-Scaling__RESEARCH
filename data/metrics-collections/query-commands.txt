@@ -58,3 +58,7 @@ type cadvisor_mem.json
 // container_fs_usage_bytes
 curl.exe "http://localhost:9090/api/v1/query?query=container_fs_usage_bytes" -o cadvisor_fs.json
 type cadvisor_fs.json
+
+// pod_cpu_usage (%)
+curl.exe "http://localhost:9090/api/v1/query?query=sum%20by%20(pod%2C%20namespace)%20(irate(container_cpu_usage_seconds_total%7Bimage!%3D%22%22%2C%20container!%3D%22%22%7D%5B1m%5D))%20*%20100" --output pod_cpu.json
+type pod_cpu.json
