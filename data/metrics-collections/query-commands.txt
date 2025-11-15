@@ -39,3 +39,6 @@ type load1.json
 
 curl.exe "http://localhost:9090/api/v1/query?query=node_load5" --output load5.json
 type load5.json
+
+curl.exe "http://localhost:9090/api/v1/query?query=node_load15" --output load15.json\
+type load15.json
