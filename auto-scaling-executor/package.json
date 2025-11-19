@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "child_process": "^1.0.2",
     "express": "^5.1.0",
     "winston": "^3.18.3"
   }
