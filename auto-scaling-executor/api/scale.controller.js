@@ -1,21 +1,8 @@
 import express from "express";
+import LocalScaler from "../services/local-scaler.service.js"; // IMPORTANT
 
 const router = express.Router();
 
-/**
- * POST /api/v1/scale
- * Request:
- * {
- *   "deployment": "product",
- *   "request_pods": 300
- * }
- *
- * Response:
- * {
- *   "service": "product",
- *   "required_pods": 6
- * }
- */
 router.post("/scale", (req, res) => {
   const { deployment, request_pods } = req.body;
 
@@ -28,10 +15,10 @@ router.post("/scale", (req, res) => {
   const POD_CAPACITY = 50;
   const requiredPods = Math.ceil(request_pods / POD_CAPACITY);
 
-  return res.json({
-    service: deployment,
-    required_pods: requiredPods,
-  });
+  // 🔥 Logger triggers here
+  const result = LocalScaler.simulateScaling(deployment, requiredPods);
+
+  return res.json(result);
 });
 
 export default router;
