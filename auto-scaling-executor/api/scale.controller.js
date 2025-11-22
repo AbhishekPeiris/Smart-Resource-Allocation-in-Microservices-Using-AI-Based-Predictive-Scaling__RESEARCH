@@ -1,24 +1,46 @@
 import express from "express";
-import LocalScaler from "../services/local-scaler.service.js"; // IMPORTANT
+import ScalingService from "../services/scaling.service.js";
+import logger from "../utils/logger.js";
 
 const router = express.Router();
 
-router.post("/scale", (req, res) => {
-  const { deployment, request_pods } = req.body;
+/**
+ * POST /api/v1/scale
+ * Body:
+ * {
+ *   "deployment": "product-service",
+ *   "request_pods": 250
+ * }
+ *
+ * Response:
+ * {
+ *   "service": "product-service",
+ *   "previous_replicas": 0,
+ *   "required_replicas": 5,
+ *   "message": "Scaled locally (simulation only)"
+ * }
+ */
+router.post("/scale", async (req, res) => {
+  try {
+    const { deployment, request_pods } = req.body;
 
-  if (!deployment || !request_pods) {
+    const result = await ScalingService.handleScalingRequest(
+      deployment,
+      request_pods
+    );
+
+    return res.status(200).json(result);
+  } catch (err) {
+    logger.error({
+      event: "SCALING_REQUEST_FAILED",
+      error: err.message,
+      body: req.body
+    });
+
     return res.status(400).json({
-      error: "deployment and request_pods are required",
+      error: err.message || "Failed to process scaling request"
     });
   }
-
-  const POD_CAPACITY = 50;
-  const requiredPods = Math.ceil(request_pods / POD_CAPACITY);
-
-  // 🔥 Logger triggers here
-  const result = LocalScaler.simulateScaling(deployment, requiredPods);
-
-  return res.json(result);
 });
 
 export default router;

@@ -1,22 +1,27 @@
 import logger from "../utils/logger.js";
 
-export class LocalScaler {
+class LocalScaler {
   constructor() {
+    // in-memory store for simulation
     this.services = {};
   }
 
   simulateScaling(serviceName, requiredPods) {
     const previousState = this.services[serviceName] || { current: 0 };
 
-    const newState = { current: requiredPods };
+    const newState = {
+      current: requiredPods
+    };
+
     this.services[serviceName] = newState;
 
+    // structured log
     logger.info({
       event: "LOCAL_SCALING_SIMULATION",
       service: serviceName,
       previous_replicas: previousState.current,
-      new_replicas: requiredPods,
-      status: "SUCCESS",
+      required_replicas: requiredPods,
+      status: "SUCCESS"
     });
 
     return {
