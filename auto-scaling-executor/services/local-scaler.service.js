@@ -1,3 +1,4 @@
+// services/local-scaler.service.js
 import logger from "../utils/logger.js";
 
 class LocalScaler {
