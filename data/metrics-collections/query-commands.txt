@@ -81,21 +81,18 @@ type pod_net_out.json
 
 -------------APPLICATION_LEVEL-------------
 
-// request_rate_(RPS)–requests_per_second
-curl.exe "http://localhost:9090/api/v1/query?query=sum(rate(istio_requests_total%5B1m%5D))%20by%20(destination_workload)" --output app_rps.json
-type app_rps.json
+// queue_length
+curl.exe http://127.0.0.1:3000/metrics | findstr app_queue_length
 
-// response_latency–average_response_time (ms)
-curl.exe "http://localhost:9090/api/v1/query?query=sum(rate(istio_request_duration_seconds_sum%5B1m%5D))%20by%20(destination_workload)%20%2F%20sum(rate(istio_request_duration_seconds_count%5B1m%5D))%20by%20(destination_workload)%20*%201000" --output app_latency_ms.json
-type app_latency_ms.json
+// request_count (RPS)
+curl.exe http://127.0.0.1:3000/metrics | findstr http_requests_total
 
-// error_rate(%)–failed_requests_percentage
-curl.exe "http://localhost:9090/api/v1/query?query=%28sum(rate(istio_requests_total%7Bresponse_code%3D~%225..%22%7D%5B1m%5D))%20by%20(destination_workload)%20%2F%20sum(rate(istio_requests_total%5B1m%5D))%20by%20(destination_workload)%29%20*%20100" --output app_error_rate.json
-type app_error_rate.json
+// latency_histogram
+curl.exe http://127.0.0.1:3000/metrics | findstr http_request_duration
 
-// queue_length–pending_requests_in_processing_queues
-curl.exe "http://localhost:9090/api/v1/query?query=sum(app_queue_length)%20by%20(pod%2C%20namespace)" --output app_queue_length.json
-type app_queue_length.json
+// errors_(status != 200)_find
+curl.exe http://127.0.0.1:3000/metrics | findstr 404
+
 
 
 -------------SERVICE_MESH_LEVEL-------------
