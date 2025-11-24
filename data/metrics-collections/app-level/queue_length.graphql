@@ -1,0 +1,6 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 11892  100 11892    0     0   387k      0 --:--:-- --:--:-- --:--:--  400k
+# HELP app_queue_length Number of pending jobs in internal queue
+# TYPE app_queue_length gauge
+app_queue_length{service="order-service"} 0
