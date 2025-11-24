@@ -1,40 +1,39 @@
 const client = require('prom-client');
-
-// Global registry
 const register = new client.Registry();
 
-// ---- 1) REQUEST RATE counter ----
+// === Requests Counter ===
 const httpRequestTotal = new client.Counter({
     name: 'http_requests_total',
-    help: 'Total HTTP requests',
+    help: 'Total number of HTTP requests',
     labelNames: ['method', 'route', 'status'],
 });
+register.registerMetric(httpRequestTotal);
 
-// ---- 2) LATENCY histogram ----
+// === Latency Histogram ===
 const httpRequestDurationMs = new client.Histogram({
     name: 'http_request_duration_milliseconds',
-    help: 'HTTP request duration in ms',
+    help: 'Duration of HTTP requests in ms',
     labelNames: ['method', 'route', 'status'],
-    buckets: [50, 100, 200, 500, 1000, 2000, 5000],
+    buckets: [50, 100, 200, 500, 1500, 3000],
 });
+register.registerMetric(httpRequestDurationMs);
 
-// ---- 3) QUEUE LENGTH gauge ----
+// === Queue Length ===
 const appQueueLength = new client.Gauge({
     name: 'app_queue_length',
-    help: 'Pending jobs in queue',
+    help: 'Number of pending jobs in internal queue',
 });
-
-// Register metrics
-register.registerMetric(httpRequestTotal);
-register.registerMetric(httpRequestDurationMs);
 register.registerMetric(appQueueLength);
 
-// Default Node.js metrics
+register.setDefaultLabels({
+    service: 'order-service',
+});
+
 client.collectDefaultMetrics({ register });
 
 module.exports = {
     register,
     httpRequestTotal,
     httpRequestDurationMs,
-    appQueueLength,
+    appQueueLength
 };

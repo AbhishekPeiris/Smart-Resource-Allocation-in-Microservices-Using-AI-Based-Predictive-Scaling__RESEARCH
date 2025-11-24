@@ -1,0 +1,10 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: order-service-metrics
+spec:
+  selector:
+    matchLabels:
+      app: order-service
+  mtls:
+    mode: PERMISSIVE
