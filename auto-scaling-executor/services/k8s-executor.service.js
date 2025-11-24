@@ -5,69 +5,67 @@ class K8sExecutor {
   constructor() {
     const kc = new KubeConfig();
     kc.loadFromDefault();
-
     this.appsApi = kc.makeApiClient(AppsV1Api);
-    this.namespace = process.env.K8S_NAMESPACE || "default";
+    this.ns = process.env.K8S_NAMESPACE || "default";
   }
 
   async getCurrentReplicas(deployment) {
     try {
-      const res = await this.appsApi.readNamespacedDeployment(
-        deployment,
-        this.namespace
-      );
+      const res = await this.appsApi.readNamespacedDeployment(deployment, this.ns);
       return res.body?.spec?.replicas ?? 0;
     } catch (err) {
-      logger.error({
-        event: "K8S_GET_REPLICAS_FAILED",
-        deployment,
-        namespace: this.namespace,
-        error: err.message,
-      });
+      logger.error({ event: "K8S_GET_FAILED", deployment, error: err.message });
       return 0;
     }
   }
 
   async scaleDeployment(deployment, replicas) {
-    const previousReplicas = await this.getCurrentReplicas(deployment);
-
+    const previous = await this.getCurrentReplicas(deployment);
     const patchBody = { spec: { replicas } };
 
     try {
       await this.appsApi.patchNamespacedDeployment(
         deployment,
-        this.namespace,
+        this.ns,
         patchBody,
         undefined,
         undefined,
         undefined,
         undefined,
-        {
-          headers: {
-            "Content-Type": "application/strategic-merge-patch+json",
-          },
-        }
+        { headers: { "Content-Type": "application/strategic-merge-patch+json" } }
       );
 
       logger.info({
-        event: "K8S_SCALING_EXECUTED",
+        event: "SCALING_EXECUTED_K8S",
         deployment,
-        previous_replicas: previousReplicas,
+        previous_replicas: previous,
         required_replicas: replicas,
-        status: "SUCCESS",
+        status: "SUCCESS"
       });
 
-      return { status: "SUCCESS", previous_replicas: previousReplicas, required_replicas: replicas };
+      return {
+        deployment,
+        previous_replicas: previous,
+        required_replicas: replicas,
+        status: "SUCCESS"
+      };
+
     } catch (err) {
       logger.error({
-        event: "K8S_SCALING_FAILED",
+        event: "SCALING_FAILED_K8S",
         deployment,
-        previous_replicas: previousReplicas,
+        previous_replicas: previous,
         required_replicas: replicas,
-        error: err.message,
+        error: err.message
       });
 
-      return { status: "FAILED", previous_replicas: previousReplicas, required_replicas: replicas, error: err.message };
+      return {
+        deployment,
+        previous_replicas: previous,
+        required_replicas: replicas,
+        status: "FAILED",
+        error: err.message
+      };
     }
   }
 }

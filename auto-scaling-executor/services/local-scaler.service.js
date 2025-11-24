@@ -6,23 +6,25 @@ class LocalScaler {
   }
 
   simulateScaling(deployment, replicas) {
-    const prev = this.services[deployment]?.current ?? 0;
+    const previous = this.services[deployment]?.current ?? 0;
 
     this.services[deployment] = { current: replicas };
 
+    // MANDATORY SCALING LOG
     logger.info({
-      event: "LOCAL_SCALING_SIMULATION",
+      event: "SCALING_EXECUTED_LOCAL",
       deployment,
-      previous_replicas: prev,
+      previous_replicas: previous,
       required_replicas: replicas,
-      status: "SUCCESS",
+      status: "SUCCESS"
     });
 
     return {
-      status: "SUCCESS",
-      previous_replicas: prev,
+      deployment,
+      previous_replicas: previous,
       required_replicas: replicas,
-      message: "Scaled locally (simulation only)",
+      status: "SUCCESS",
+      message: "Scaled locally (simulation only)"
     };
   }
 }

@@ -7,23 +7,23 @@ router.post("/scale", async (req, res) => {
   try {
     const body = req.body;
 
-    // MULTIPLE SERVICES
+    // Multi-service request
     if (Array.isArray(body.services)) {
       const result = await ScalingService.scaleMultiple(body.services);
       return res.status(200).json(result);
     }
 
-    // SINGLE SERVICE
-    const single = {
+    // Single service request
+    const singleService = [{
       deployment: body.deployment,
-      request_pods: body.request_pods,
-    };
+      request_pods: body.request_pods
+    }];
 
-    const result = await ScalingService.scaleMultiple([single]);
+    const result = await ScalingService.scaleMultiple(singleService);
     return res.status(200).json(result);
 
   } catch (err) {
-    return res.status(400).json({ success: false, error: err.message });
+    return res.status(400).json({ error: err.message });
   }
 });
 
