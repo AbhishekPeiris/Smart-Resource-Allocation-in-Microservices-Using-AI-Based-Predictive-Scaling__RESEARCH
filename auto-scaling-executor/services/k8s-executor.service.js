@@ -57,7 +57,7 @@ class K8sExecutor {
       console.log(`🔍 Executing: ${cmd}`)
       const { stdout } = await execAsync(cmd)
       console.log(`📊 Raw output: "${stdout}"`)
-      const replicas = parseInt(stdout.trim().replace(/'/g, '')) || 0
+      const replicas = parseInt(stdout.trim().replace(/'/g, "")) || 0
       console.log(`📊 Parsed replicas: ${replicas}`)
 
       logger.info({
