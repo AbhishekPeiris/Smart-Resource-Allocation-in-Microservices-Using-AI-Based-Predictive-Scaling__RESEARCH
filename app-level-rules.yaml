@@ -1,0 +1,49 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: app-level-metrics
+  namespace: monitoring
+  labels:
+    release: prometheus   # Matches your ServiceMonitor labels
+spec:
+  groups:
+  - name: app-level
+    rules:
+
+    # 1) Requests per second (RPS)
+    - record: app_rps
+      expr: |
+        sum(
+          rate(istio_requests_total{reporter="destination"}[1m])
+        ) by (destination_workload)
+
+    # 2) Error rate (non-2xx / total) per workload
+    - record: app_error_rate
+      expr: |
+        sum(
+          rate(istio_requests_total{reporter="destination", response_code!~"2.."}[5m])
+        ) by (destination_workload)
+        /
+        sum(
+          rate(istio_requests_total{reporter="destination"}[5m])
+        ) by (destination_workload)
+
+    # 3) Average latency (milliseconds) per workload
+    - record: app_latency_ms
+      expr: |
+        (
+          sum(
+            rate(istio_request_duration_milliseconds_sum{reporter="destination"}[5m])
+          ) by (destination_workload)
+        )
+        /
+        (
+          sum(
+            rate(istio_request_duration_milliseconds_count{reporter="destination"}[5m])
+          ) by (destination_workload)
+        )
+
+    # 4) Queue length (RabbitMQ queue messages ready per queue)
+    - record: app_queue_length
+      expr: |
+        sum(rabbitmq_queue_messages_ready) by (queue)

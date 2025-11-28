@@ -1,29 +1,28 @@
-'use strict'
+'use strict';
 
-const path = require('path')
-const AutoLoad = require('@fastify/autoload')
+const path = require('path');
+const AutoLoad = require('@fastify/autoload');
+const cors = require('@fastify/cors');
+
+// Metrics plugin
+const metricsPlugin = require('./plugins/metrics');
 
 module.exports = async function (fastify, opts) {
-// Place here your custom code!
 
-  fastify.register(require('@fastify/cors'), {
-    origin: '*'
-  })
+  // Enable CORS
+  fastify.register(cors, { origin: '*' });
 
-  // Do not touch the following lines
+  // Register Metrics First
+  fastify.register(metricsPlugin);
 
-  // This loads all plugins defined in plugins
-  // those should be support plugins that are reused
-  // through your application
+  // Load plugins except metrics
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'plugins'),
-    options: Object.assign({}, opts)
-  })
+    ignorePattern: /metrics\.js$/,
+  });
 
-  // This loads all plugins defined in routes
-  // define your routes in one of these
+  // Load routes
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'routes'),
-    options: Object.assign({}, opts)
-  })
-}
+  });
+};

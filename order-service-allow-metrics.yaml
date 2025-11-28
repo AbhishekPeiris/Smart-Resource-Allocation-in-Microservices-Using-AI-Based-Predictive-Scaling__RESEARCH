@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: order-service-metrics
+spec:
+  hosts:
+    - order-service
+  http:
+    - match:
+        - uri:
+            prefix: /metrics
+      route:
+        - destination:
+            host: order-service
+            port:
+              number: 3000
