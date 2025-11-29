@@ -1,20 +1,21 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: store-front
+  name: order-service
   namespace: default
   labels:
-    app: store-front
+    app: order-service
+    prometheus: "true"
     istio: proxy
     security.istio.io/tlsMode: istio
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
-    app: store-front
+    app: order-service
   ports:
     - name: http
-      port: 80
-      targetPort: 8080
+      port: 3000
+      targetPort: 3000
 
     - name: http-envoy-prom
       port: 15090

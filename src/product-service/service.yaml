@@ -1,20 +1,20 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: store-front
+  name: product-service
   namespace: default
   labels:
-    app: store-front
+    app: product-service
     istio: proxy
     security.istio.io/tlsMode: istio
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
-    app: store-front
+    app: product-service
   ports:
     - name: http
-      port: 80
-      targetPort: 8080
+      port: 3002
+      targetPort: 3002
 
     - name: http-envoy-prom
       port: 15090
