@@ -27,7 +27,7 @@ router.post("/scale", async (req, res) => {
   }
 });
 
-// POST /api/v1/scale-with-metrics
+// POST /api/v1/scale-with-metrics (same behavior as dedicated controller)
 router.post("/scale-with-metrics", async (req, res) => {
   try {
     const body = req.body;
@@ -42,7 +42,7 @@ router.post("/scale-with-metrics", async (req, res) => {
       }
 
       return res.status(200).json({
-        mode: ScalingService.mode,
+        mode: ScalingService.getMode(),
         results
       });
     }
@@ -55,7 +55,7 @@ router.post("/scale-with-metrics", async (req, res) => {
     });
 
     return res.status(200).json({
-      mode: ScalingService.mode,
+      mode: ScalingService.getMode(),
       results: [result]
     });
 

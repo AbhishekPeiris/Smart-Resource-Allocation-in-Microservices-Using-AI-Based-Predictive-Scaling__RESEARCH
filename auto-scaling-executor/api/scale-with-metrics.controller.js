@@ -14,17 +14,23 @@ router.post("/scale-with-metrics", async (req, res) => {
         const r = await ScalingService.scaleOneWithMetrics(svc);
         results.push(r);
       }
-      return res.status(200).json({ mode: ScalingService.mode, results });
+      return res.status(200).json({
+        mode: ScalingService.getMode(),
+        results
+      });
     }
 
     // Single-service
     const result = await ScalingService.scaleOneWithMetrics({
       deployment: body.deployment,
       request_pods: body.request_pods,
-      metrics: body.metrics || {},
+      metrics: body.metrics || {}
     });
 
-    return res.status(200).json({ mode: ScalingService.mode, results: [result] });
+    return res.status(200).json({
+      mode: ScalingService.getMode(),
+      results: [result]
+    });
 
   } catch (err) {
     return res.status(400).json({ error: err.message });
