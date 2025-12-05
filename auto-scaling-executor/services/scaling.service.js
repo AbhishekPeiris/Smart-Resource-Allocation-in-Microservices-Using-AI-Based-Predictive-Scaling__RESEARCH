@@ -28,57 +28,24 @@ class ScalingService {
     return Math.max(1, Math.ceil(requestPods / this.POD_CAPACITY));
   }
 
-  async scaleOne({ deployment, request_pods }) {
-    this.validate({ deployment, request_pods });
-    const additionalPods = this.calculatePods(request_pods);
-    const mode = this.getMode();
-
-    console.log("ScalingService executing in mode:", mode);
-
-    if (mode === "K8S") {
-      return await K8sExecutor.scaleDeploymentIncremental(deployment, additionalPods);
-    }
-
-    return LocalScaler.simulateScaling(deployment, additionalPods);
-  }
-
-  async scaleMultiple(services) {
-    const results = [];
-
-    for (const svc of services) {
-      const result = await this.scaleOne(svc);
-      results.push(result);
-    }
-
-    return { mode: this.getMode(), results };
-  }
-
   /**
-   * Scale + metrics-based validation + rollback (K8S only)
+   * --- MAIN METHOD ---
+   * Scale + metrics-based validation + rollback
    */
   async scaleOneWithMetrics({ deployment, request_pods, metrics }) {
-    // 1. Validate + basic calculations
     this.validate({ deployment, request_pods });
     const additionalPods = this.calculatePods(request_pods);
     const mode = this.getMode();
 
-    console.log("ScalingService (metrics) executing in mode:", mode);
-
-    // 2. First perform the basic scaling
-    let baseResult;
-    if (mode === "K8S") {
-      baseResult = await K8sExecutor.scaleDeploymentIncremental(
-        deployment,
-        additionalPods
-      );
-    } else {
-      baseResult = LocalScaler.simulateScaling(deployment, additionalPods);
-    }
+    // Step 1: Apply scale
+    let baseResult =
+      mode === "K8S"
+        ? await K8sExecutor.scaleDeploymentIncremental(deployment, additionalPods)
+        : LocalScaler.simulateScaling(deployment, additionalPods);
 
     const attemptedAdditional =
       baseResult.additional_replicas ?? additionalPods;
 
-    // If scaling itself failed → return as-is, mark validation skipped
     if (baseResult.status !== "SUCCESS") {
       return {
         ...baseResult,
@@ -88,24 +55,20 @@ class ScalingService {
           passed: false,
           rolledBack: false,
           skipped: true,
-          reason: "Scaling failed before validation could run"
+          reason: "Scaling failed before validation"
         }
       };
     }
 
-    // 3. Metrics → score
+    // Step 2: Validate metrics
     const extracted = MetricsService.extractFromPayload(metrics || {});
-    const raw = MetricsService.calculateResilienceScore(extracted);
-    const passed = raw.score >= this.RESILIENCE_THRESHOLD;
+    const stability = MetricsService.evaluateStability(extracted);
+    const scoreData = MetricsService.calculateResilienceScore(extracted);
 
-    const validation = {
-      ...raw,
-      threshold: this.RESILIENCE_THRESHOLD,
-      passed,
-      rolledBack: false
-    };
+    const scorePassed = scoreData.score >= this.RESILIENCE_THRESHOLD;
+    const passed = stability.isStable && scorePassed;
 
-    // 4. LOCAL mode – no rollback, just attach validation
+    // Step 3: LOCAL MODE → NO rollback
     if (mode !== "K8S") {
       return {
         deployment,
@@ -115,41 +78,59 @@ class ScalingService {
         required_replicas: baseResult.required_replicas,
         status: passed ? "SUCCESS_VALIDATED_LOCAL" : "SUCCESS_VALIDATION_FAILED_LOCAL",
         message: baseResult.message,
-        validation
+        validation: {
+          ...scoreData,
+          passed,
+          rolledBack: false,
+          threshold: this.RESILIENCE_THRESHOLD
+        }
       };
     }
 
-    // 5. K8S mode – validation pass → keep scale
+    // Step 4: PASS → keep scale (K8S)
     if (passed) {
       return {
         deployment,
         previous_replicas: baseResult.previous_replicas,
         attempted_additional_replicas: attemptedAdditional,
-        additional_replicas: attemptedAdditional, // actually active
+        additional_replicas: attemptedAdditional,
         required_replicas: baseResult.required_replicas,
         status: "SUCCESS_VALIDATED",
         message: "Scale kept – resilience validation passed",
-        validation
+        validation: {
+          ...scoreData,
+          passed: true,
+          rolledBack: false,
+          threshold: this.RESILIENCE_THRESHOLD
+        }
       };
     }
 
-    // 6. K8S mode – validation FAIL → rollback
-    await K8sExecutor.scaleDeployment(
-      deployment,
-      baseResult.previous_replicas
-    );
-    validation.rolledBack = true;
+    // Step 5: FAIL → rollback (K8S)
+    await K8sExecutor.scaleDeployment(deployment, baseResult.previous_replicas);
 
     return {
       deployment,
       previous_replicas: baseResult.previous_replicas,
       attempted_additional_replicas: attemptedAdditional,
-      additional_replicas: 0, // net extra now = 0 (rolled back)
+      additional_replicas: 0,
       required_replicas: baseResult.previous_replicas,
       status: "ROLLED_BACK",
       message: "Resilience validation failed – scale rolled back",
-      validation
+      rollback_reason: stability.reasons,   // IMPORTANT
+      validation: {
+        ...scoreData,
+        passed: false,
+        rolledBack: true,
+        threshold: this.RESILIENCE_THRESHOLD
+      }
     };
+  }
+
+  async scaleMultipleWithMetrics(services) {
+    const results = [];
+    for (const svc of services) results.push(await this.scaleOneWithMetrics(svc));
+    return { mode: this.getMode(), results };
   }
 }
 
