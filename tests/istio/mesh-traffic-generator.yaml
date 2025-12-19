@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mesh-traffic-generator
+  labels:
+    app: mesh-traffic-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mesh-traffic-generator
+  template:
+    metadata:
+      labels:
+        app: mesh-traffic-generator
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "Starting MULTI-HOP mesh traffic generator..."
+              while true; do
+
+                # --- store-front → product-service
+                wget -q -O- http://store-front.default.svc.cluster.local/api/products >/dev/null
+
+                # --- product-service → order-service (multi-hop)
+                wget -q -O- http://product-service.default.svc.cluster.local:3002/internal/order >/dev/null
+
+                # --- order-service → product-service (reverse multi-hop)
+                wget -q -O- http://order-service.default.svc.cluster.local:3000/internal/product >/dev/null
+
+                # --- store-admin → store-front
+                wget -q -O- http://store-front.default.svc.cluster.local >/dev/null
+
+                sleep 1
+              done

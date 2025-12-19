@@ -1,0 +1,67 @@
+# 1) Mesh test client - generates outbound HTTP requests INSIDE mesh
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mesh-test-client
+  labels:
+    app: mesh-test-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mesh-test-client
+  template:
+    metadata:
+      labels:
+        app: mesh-test-client
+    spec:
+      # namespace 'default' already istio-injection=enabled නම්,
+      # මෙයට automatic sidecar එක ඇවිත් mesh traffic වෙයි.
+      containers:
+        - name: curl
+          image: curlimages/curl
+          command: [ "sh", "-c" ]
+          args:
+            - |
+              while true; do
+                # order-serviceට request
+                curl -s "http://order-service:3000/health" > /dev/null || true
+                sleep 1
+              done
+
+---
+
+# 2) VirtualService - add retries + 503 faults (only for testing)
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: order-service-mesh-test
+spec:
+  hosts:
+    - order-service
+  http:
+    - fault:
+        abort:
+          percentage:
+            value: 30    # 30% requests 503 කරලා ගන්න
+          httpStatus: 503
+      retries:
+        attempts: 3
+        perTryTimeout: 1s
+      route:
+        - destination:
+            host: order-service
+
+---
+
+# 3) PeerAuthentication - STRICT mTLS only while testing
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: order-service-mtls-test
+spec:
+  selector:
+    matchLabels:
+      app: order-service
+  mtls:
+    mode: STRICT
