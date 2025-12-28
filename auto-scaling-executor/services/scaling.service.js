@@ -184,6 +184,59 @@ class ScalingService {
     }
   }
 
+  /**
+   * Scale multiple services without metrics validation or chaos.
+   * Keeps output shape consistent with other endpoints.
+   */
+  async scaleMultiple(services) {
+    const mode = this.getMode();
+    const results = [];
+
+    for (const svc of services) {
+      try {
+        this.validate(svc);
+        const { deployment, request_pods } = svc;
+        const additionalPods = this.calculatePods(request_pods);
+
+        const baseResult =
+          mode === "K8S"
+            ? await K8sExecutor.scaleDeploymentIncremental(
+                deployment,
+                additionalPods
+              )
+            : LocalScaler.simulateScaling(deployment, additionalPods);
+
+        const attemptedAdditional =
+          baseResult.additional_replicas ?? additionalPods;
+
+        const success = baseResult.status === "SUCCESS";
+
+        results.push({
+          deployment,
+          previous_replicas: baseResult.previous_replicas,
+          attempted_additional_replicas: attemptedAdditional,
+          additional_replicas: success ? attemptedAdditional : 0,
+          required_replicas: baseResult.required_replicas,
+          status: baseResult.status,
+          message:
+            baseResult.message || (success ? "Scaled successfully" : baseResult.error || "Scaling failed"),
+        });
+      } catch (err) {
+        results.push({
+          deployment: svc?.deployment,
+          previous_replicas: 0,
+          attempted_additional_replicas: 0,
+          additional_replicas: 0,
+          required_replicas: 0,
+          status: "FAILED",
+          message: err.message,
+        });
+      }
+    }
+
+    return { mode, results };
+  }
+
   async scaleMultipleWithMetrics(services) {
     const results = [];
     for (const svc of services) {
