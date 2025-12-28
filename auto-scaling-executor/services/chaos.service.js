@@ -32,7 +32,8 @@ class ChaosService {
       );
       fs.writeFileSync(tempFile, yaml);
 
-      const cmd = `kubectl apply -f ${tempFile}`;
+      const cmd = `kubectl apply -f "${tempFile}"`;
+      
       await execAsync(cmd);
 
       console.log(`⚡ Chaos injected for deployment: ${deployment}`);
