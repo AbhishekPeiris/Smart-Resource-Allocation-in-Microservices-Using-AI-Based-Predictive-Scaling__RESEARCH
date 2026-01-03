@@ -117,6 +117,10 @@ class ScalingService {
             passed,
             rolledBack: false,
             threshold: this.RESILIENCE_THRESHOLD,
+            hardSafetyPassed: stability.isStable,
+            reasons: stability.reasons,
+            metricsEvaluation: stability.evaluations || [],
+            standardsUsed: MetricsService.THRESHOLDS,
           },
         }
       }
@@ -139,6 +143,10 @@ class ScalingService {
             passed: true,
             rolledBack: false,
             threshold: this.RESILIENCE_THRESHOLD,
+            hardSafetyPassed: stability.isStable,
+            reasons: stability.reasons,
+            metricsEvaluation: stability.evaluations || [],
+            standardsUsed: MetricsService.THRESHOLDS,
           },
         }
       }
@@ -163,6 +171,10 @@ class ScalingService {
           passed: false,
           rolledBack: true,
           threshold: this.RESILIENCE_THRESHOLD,
+          hardSafetyPassed: stability.isStable,
+          reasons: stability.reasons,
+          metricsEvaluation: stability.evaluations || [],
+          standardsUsed: MetricsService.THRESHOLDS,
         },
       }
     } finally {
