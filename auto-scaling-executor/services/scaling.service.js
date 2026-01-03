@@ -55,6 +55,7 @@ class ScalingService {
     if (baseResult.status !== "SUCCESS") {
       return {
         ...baseResult,
+        request_pods,
         attempted_additional_replicas: attemptedAdditional,
         additional_replicas: 0,
         validation: {
@@ -104,6 +105,7 @@ class ScalingService {
       if (mode !== "K8S") {
         return {
           deployment,
+          request_pods,
           previous_replicas: baseResult.previous_replicas,
           attempted_additional_replicas: attemptedAdditional,
           additional_replicas: attemptedAdditional,
@@ -125,6 +127,7 @@ class ScalingService {
       if (passed) {
         return {
           deployment,
+          request_pods,
           previous_replicas: baseResult.previous_replicas,
           attempted_additional_replicas: attemptedAdditional,
           additional_replicas: attemptedAdditional,
@@ -147,6 +150,7 @@ class ScalingService {
 
       return {
         deployment,
+        request_pods,
         previous_replicas: baseResult.previous_replicas,
         attempted_additional_replicas: attemptedAdditional,
         additional_replicas: 0,
@@ -194,6 +198,7 @@ class ScalingService {
 
         results.push({
           deployment,
+          request_pods,
           previous_replicas: baseResult.previous_replicas,
           attempted_additional_replicas: attemptedAdditional,
           additional_replicas: success ? attemptedAdditional : 0,
@@ -206,6 +211,7 @@ class ScalingService {
       } catch (err) {
         results.push({
           deployment: svc?.deployment,
+          request_pods: svc?.request_pods,
           previous_replicas: 0,
           attempted_additional_replicas: 0,
           additional_replicas: 0,
