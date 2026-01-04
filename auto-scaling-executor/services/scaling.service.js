@@ -7,7 +7,6 @@ import ChaosService from "./chaos.service.js"
 
 class ScalingService {
   constructor() {
-    this.POD_CAPACITY = 50
     this.RESILIENCE_THRESHOLD = Number(process.env.RESILIENCE_THRESHOLD || 0.7)
     this.CHAOS_WAIT_MS = Number(process.env.CHAOS_WAIT_MS || 10000) // 10s default
   }
@@ -27,21 +26,73 @@ class ScalingService {
   }
 
   calculatePods(requestPods) {
-    return Math.max(1, Math.ceil(requestPods / this.POD_CAPACITY))
+    return Math.max(1, requestPods)
   }
 
   /**
    * --- MAIN METHOD ---
-   * 1) Scale
-   * 2) (K8S only) Inject chaos
-   * 3) Validate metrics
-   * 4) (K8S only) Rollback on failure
+   * IF metrics provided:
+   *   1) Scale
+   *   2) (K8S only) Inject chaos
+   *   3) Validate metrics
+   *   4) (K8S only) Rollback on failure
+   *
+   * IF NO metrics provided:
+   *   Just scale to request_pods count directly (no validation, no rollback)
    */
   async scaleOneWithMetrics({ deployment, request_pods, metrics }) {
     this.validate({ deployment, request_pods })
     const additionalPods = this.calculatePods(request_pods)
     const mode = this.getMode()
 
+    // ─────────────────────────────────────────
+    // CHECK: Metrics provided?
+    // ─────────────────────────────────────────
+    const hasMetrics = metrics && Object.keys(metrics).length > 0
+
+    // If NO metrics → just scale directly (no validation)
+    if (!hasMetrics) {
+      const previousReplicas = await K8sExecutor.getCurrentReplicas(deployment)
+      const baseResult =
+        mode === "K8S"
+          ? await K8sExecutor.scaleDeploymentIncremental(deployment, additionalPods)
+          : LocalScaler.simulateScaling(deployment, additionalPods)
+
+      if (baseResult.status === "SUCCESS") {
+        return {
+          deployment,
+          request_pods,
+          previous_replicas: previousReplicas,
+          attempted_additional_replicas: additionalPods,
+          additional_replicas: additionalPods,
+          required_replicas: previousReplicas + additionalPods,
+          status: "SUCCESS_NO_VALIDATION",
+          message: "Scaled successfully (no metrics provided, validation skipped)",
+          validation: {
+            passed: null,
+            rolledBack: false,
+            skipped: true,
+            reason: "No metrics in request body",
+          },
+        }
+      }
+
+      return {
+        ...baseResult,
+        request_pods,
+        attempted_additional_replicas: additionalPods,
+        additional_replicas: 0,
+        validation: {
+          passed: false,
+          rolledBack: false,
+          skipped: true,
+          reason: "Scaling failed before validation",
+        },
+      }
+    }
+
+    // ─────────────────────────────────────────
+    // WITH METRICS → Full validation flow
     // ─────────────────────────────────────────
     // STEP 1 – Apply scale (LOCAL or K8S)
     // ─────────────────────────────────────────
