@@ -31,6 +31,10 @@ class ScalingService {
 
   /**
    * --- MAIN METHOD ---
+   * IF scale_action is "no_change": return current state without scaling
+   * IF scale_action is "scale_up": increment pods by request_pods
+   * IF scale_action is "scale_down": decrement pods by request_pods
+   *
    * IF metrics provided:
    *   1) Scale
    *   2) (K8S only) Inject chaos
@@ -40,10 +44,39 @@ class ScalingService {
    * IF NO metrics provided:
    *   Just scale to request_pods count directly (no validation, no rollback)
    */
-  async scaleOneWithMetrics({ deployment, request_pods, metrics }) {
+  async scaleOneWithMetrics({ deployment, request_pods, metrics, scale_action = "scale_up" }) {
     this.validate({ deployment, request_pods })
-    const additionalPods = this.calculatePods(request_pods)
     const mode = this.getMode()
+
+    // ─────────────────────────────────────────
+    // CHECK: scale_action
+    // ─────────────────────────────────────────
+    if (scale_action === "no_change") {
+      const previousReplicas = await K8sExecutor.getCurrentReplicas(deployment)
+      return {
+        deployment,
+        request_pods,
+        scale_action: "no_change",
+        previous_replicas: previousReplicas,
+        attempted_additional_replicas: 0,
+        additional_replicas: 0,
+        required_replicas: previousReplicas,
+        status: "NO_ACTION",
+        message: "No scaling action applied – scale_action is 'no_change'",
+        validation: {
+          passed: null,
+          rolledBack: false,
+          skipped: true,
+          reason: "scale_action set to no_change",
+        },
+      }
+    }
+
+    // Calculate pods based on scale_action
+    let additionalPods = this.calculatePods(request_pods)
+    if (scale_action === "scale_down") {
+      additionalPods = -additionalPods
+    }
 
     // ─────────────────────────────────────────
     // CHECK: Metrics provided?
@@ -62,6 +95,7 @@ class ScalingService {
         return {
           deployment,
           request_pods,
+          scale_action: scale_action,
           previous_replicas: previousReplicas,
           attempted_additional_replicas: additionalPods,
           additional_replicas: additionalPods,
@@ -80,6 +114,7 @@ class ScalingService {
       return {
         ...baseResult,
         request_pods,
+        scale_action: scale_action,
         attempted_additional_replicas: additionalPods,
         additional_replicas: 0,
         validation: {
@@ -157,6 +192,7 @@ class ScalingService {
         return {
           deployment,
           request_pods,
+          scale_action: scale_action,
           previous_replicas: baseResult.previous_replicas,
           attempted_additional_replicas: attemptedAdditional,
           additional_replicas: attemptedAdditional,
@@ -183,6 +219,7 @@ class ScalingService {
         return {
           deployment,
           request_pods,
+          scale_action: scale_action,
           previous_replicas: baseResult.previous_replicas,
           attempted_additional_replicas: attemptedAdditional,
           additional_replicas: attemptedAdditional,
@@ -210,6 +247,7 @@ class ScalingService {
       return {
         deployment,
         request_pods,
+        scale_action: scale_action,
         previous_replicas: baseResult.previous_replicas,
         attempted_additional_replicas: attemptedAdditional,
         additional_replicas: 0,
