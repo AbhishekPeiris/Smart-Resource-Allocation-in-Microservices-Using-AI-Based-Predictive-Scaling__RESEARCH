@@ -12,7 +12,7 @@ class K8sExecutor {
     try {
       const kc = new KubeConfig()
 
-      // 🔥 VERY IMPORTANT FIX:
+      //  VERY IMPORTANT FIX:
       // Ensure Node uses the SAME kubeconfig kubectl uses.
       const kubeConfigPath = process.env.KUBECONFIG || path.join(os.homedir(), ".kube", "config")
 
@@ -38,7 +38,7 @@ class K8sExecutor {
    * Get current replica count of deployment using kubectl
    */
   async getCurrentReplicas(deployment) {
-    console.log("🔍 getCurrentReplicas called with:", {
+    console.log(" getCurrentReplicas called with:", {
       deployment,
       type: typeof deployment,
       ns: this.ns,
@@ -54,11 +54,11 @@ class K8sExecutor {
 
     try {
       const cmd = `kubectl get deployment ${deployment} -n ${this.ns} -o jsonpath='{.spec.replicas}'`
-      console.log(`🔍 Executing: ${cmd}`)
+      console.log(`Executing: ${cmd}`)
       const { stdout } = await execAsync(cmd)
-      console.log(`📊 Raw output: "${stdout}"`)
+      console.log(` Raw output: "${stdout}"`)
       const replicas = parseInt(stdout.trim().replace(/'/g, "")) || 0
-      console.log(`📊 Parsed replicas: ${replicas}`)
+      console.log(`Parsed replicas: ${replicas}`)
 
       logger.info({
         event: "K8S_GET_SUCCESS",
@@ -84,7 +84,7 @@ class K8sExecutor {
    * Scale deployment using kubectl command
    */
   async scaleDeployment(deployment, replicas) {
-    console.log("🔍 scaleDeployment called with:", {
+    console.log(" scaleDeployment called with:", {
       deployment,
       type: typeof deployment,
       replicas,
@@ -147,7 +147,7 @@ class K8sExecutor {
    * Scale deployment incrementally (add to current replicas)
    */
   async scaleDeploymentIncremental(deployment, additionalReplicas) {
-    console.log("🔍 scaleDeploymentIncremental called with:", {
+    console.log(" scaleDeploymentIncremental called with:", {
       deployment,
       additionalReplicas,
     })
@@ -166,7 +166,7 @@ class K8sExecutor {
     const current = await this.getCurrentReplicas(deployment)
     const newTotal = current + additionalReplicas
 
-    console.log(`📈 Incremental scaling: ${current} + ${additionalReplicas} = ${newTotal}`)
+    console.log(` Incremental scaling: ${current} + ${additionalReplicas} = ${newTotal}`)
 
     try {
       const cmd = `kubectl scale deployment ${deployment} -n ${this.ns} --replicas=${newTotal}`
