@@ -256,7 +256,7 @@ LOG_LEVEL=info
 
 ```
 ┌─────────────────────────────────────┐
-│   Scaling Request Received           │
+│   Scaling Request Received          │
 └──────────────┬──────────────────────┘
                │
         ┌──────▼──────┐
@@ -276,7 +276,7 @@ LOG_LEVEL=info
         │ 3. Chaos    │    │
         │ 4. Rollback │    │
         └──────┬──────┘    │
-               │            │
+               │           │
         ┌──────┴────────────▼──┐
         │   Scale Direct       │
         │   (No Validation)    │
